@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import styles from "./Menu.module.css";
 
 const menuList = [
@@ -9,8 +11,7 @@ const menuList = [
         foodName: "Breakfast Set",
         description:
           "Condiments breakfast, cheese platter, fresh vegetables, home made qaimaq, Italian vegetable, pratha with pastirma, egg with tomato, sunny side egg, bread basket, black tea.",
-        img: "./api-menu-1.webp", // Full resolution image
-        placeholder: "./api-menu-1-placeholder.jpg", // Blurry placeholder image
+        img: "./api-menu-1.webp",
         price: "800Af",
         ingredients: [
           "Dairy",
@@ -30,8 +31,7 @@ const menuList = [
         foodName: "Mix Cheese Platter",
         description:
           "Feta cheese, parmesan cheese, cow cheese, cheddar cashkaval cheese, and home made butter, served with grapes and apricot.",
-        img: "./api-menu-2.webp", // Full resolution image
-        placeholder: "./api-menu-2-placeholder.jpg", // Blurry placeholder image
+        img: "./api-menu-2.webp",
         price: "300Af",
         ingredients: ["Dairy", "Cheese", "Halal"],
         review: 4.2,
@@ -40,8 +40,7 @@ const menuList = [
         foodName: "Breakfast Karahi",
         description:
           "Tender beef with lamb fat, caramelized onion, garlic, tomato, served with organic egg.",
-        img: "./api-menu-3.webp", // Full resolution image
-        placeholder: "./api-menu-3-placeholder.jpg", // Blurry placeholder image
+        img: "./api-menu-3.webp",
         price: "350Af",
         ingredients: ["Egg", "Garlic", "Onion"],
         review: 5,
@@ -74,15 +73,10 @@ function Menu() {
     menuList[0]?.foods || []
   );
 
-  // Track loading state for images
-  const [loadingImages, setLoadingImages] = useState({});
-
-  const handleImageLoad = (foodName) => {
-    setLoadingImages((prevState) => ({
-      ...prevState,
-      [foodName]: false,
-    }));
-  };
+  useEffect(() => {
+    const activeMenu = menuList.find((obj) => obj.menuName === menuListActive);
+    setItemListActive(activeMenu?.foods || []);
+  }, [menuListActive]);
 
   return (
     <div className={styles.menu} id="menu">
@@ -116,17 +110,19 @@ function Menu() {
             {itemListActive.length > 0 ? (
               itemListActive.map((list) => (
                 <div key={list.foodName} className={styles.menuCard}>
-                  {/* Show blurry image while the original one is loading */}
-                  <img
-                    src={
-                      loadingImages[list.foodName] ? list.placeholder : list.img
-                    }
+                  {/* Lazy Load Image with Spinner */}
+                  <LazyLoadImage
+                    src={list.img}
                     alt={list.foodName}
-                    className={
-                      loadingImages[list.foodName] ? styles.blurryImage : ""
-                    }
-                    onLoad={() => handleImageLoad(list.foodName)} // On image load, update state
-                    loading="lazy" // Lazy load the images
+                    effect="blur" // Apply blur effect on loading
+                    height="100%"
+                    width="100%"
+                    loading="lazy" // Native lazy loading
+                    placeholderSrc="https://via.placeholder.com/150" // Placeholder Image
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://via.placeholder.com/150"; // Fallback Image
+                    }}
                   />
                   <div className={styles.layer}>
                     <h3>{list.foodName}</h3>
@@ -157,16 +153,13 @@ function Menu() {
           </div>
 
           <div className={styles.foodImg}>
-            {/* Apply blurry placeholder for beverage images */}
-            <img
-              src={
-                loadingImages["Blue Lagoon"]
-                  ? "./menu-2-placeholder.jpg"
-                  : "./menu-2.png"
-              }
+            {/* Lazy Load Image for Beverages */}
+            <LazyLoadImage
+              src="./menu-2.png"
               alt="Blue Lagoon"
-              className={loadingImages["Blue Lagoon"] ? styles.blurryImage : ""}
-              onLoad={() => handleImageLoad("Blue Lagoon")}
+              effect="blur"
+              height="100%"
+              width="100%"
               loading="lazy"
             />
           </div>

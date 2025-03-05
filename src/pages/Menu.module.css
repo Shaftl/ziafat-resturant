@@ -150,15 +150,15 @@
   color: #ffc900;
 }
 
-.menuCard:hover img {
-  transform: scale(1.19);
-}
-
 .menuCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s;
+  transition: all 0.3s !important;
+}
+
+.menuCard:hover img {
+  transform: scale(1.19);
 }
 
 /* Beverages Section */
@@ -347,4 +347,14 @@
 .blurryImage {
   filter: blur(10px);
   transition: filter 0.3s ease-in-out;
+}
+
+.menuCard img {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.menuCard img.loaded {
+  opacity: 1;
+  transition: all 0.3s ease;
 }
