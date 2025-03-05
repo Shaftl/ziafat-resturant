@@ -1,0 +1,85 @@
+/* General Navigation Container */
+/* General Navigation Container */
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 14rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Menu */
+.container nav {
+  width: 100%;
+  height: 100%;
+}
+
+.container nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Increased spacing */
+}
+
+/* Navigation Links */
+.container nav ul li {
+  list-style: none;
+}
+
+.container nav ul li a {
+  font-size: 4.4rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Myriad Pro Bold Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.container nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Close Icon */
+.navMenu {
+  cursor: pointer;
+  font-size: 3.6rem;
+  position: absolute;
+  color: #fff;
+  right: 14rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navMenu:hover {
+  color: #ffcc00;
+}
+
+/* Animation States */
+.active {
+  left: -500rem !important;
+}
+
+.nonActive {
+  left: 0rem !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 8rem 3rem;
+  }
+
+  .container nav ul li a {
+    font-size: 3.6rem;
+  }
+
+  .navMenu {
+    font-size: 3rem;
+    top: 3rem;
+    right: 3rem;
+  }
+}

@@ -1,0 +1,350 @@
+/* General Styles */
+.menu {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.menu::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(to top left, #00000088, #00000092),
+    url("../../public/bg-texture.jpg");
+  z-index: -1;
+}
+
+.menuContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading {
+  margin-bottom: 1.8rem;
+  position: relative;
+  text-align: center;
+}
+
+.heading span {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #fff;
+  position: absolute;
+  top: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Main Menu Box */
+.menuBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8rem;
+  width: 100%;
+  margin-bottom: 7rem;
+}
+
+.menuOption {
+  display: flex;
+  align-items: center;
+  gap: 6.5rem;
+}
+
+.menuOptionDiv {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+/* Buttons for Menu Options */
+.menuOptionBtn {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuOptionBtn:hover,
+.menuOptionBtn.activeMenu {
+  background-color: #ffc900;
+  color: #000;
+  border-color: #ffc900;
+}
+
+/* Menu Cards */
+.menuBoxS {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 101rem;
+}
+
+.menuCard {
+  position: relative;
+  height: 40rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menuCard:hover .layer {
+  opacity: 1;
+  visibility: visible;
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.758);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.layer h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+
+.layer p {
+  font-size: 1.2rem;
+  color: #aaa;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.layer h4 {
+  font-size: 1.6rem;
+  color: #ffc900;
+}
+
+.menuCard:hover img {
+  transform: scale(1.19);
+}
+
+.menuCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+/* Beverages Section */
+.menuFoodSlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  width: 100%;
+  max-width: 105rem;
+}
+
+.foodImg {
+  width: 50%;
+  padding: 1.2rem;
+  height: 40rem;
+}
+
+.foodImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prevText {
+  text-align: right;
+}
+
+.menuTitle h3 {
+  color: #ffc900;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.menuTitle p {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.menuTitle h4 {
+  font-size: 1.7rem;
+  color: #ffc900;
+}
+
+/* Message for Empty Menu */
+.emptyMenu {
+  font-size: 1.5rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive Typography and Spacing */
+@media (max-width: 1200px) {
+  .menuContainer {
+    gap: 1.5rem;
+  }
+
+  .heading span {
+    font-size: 1.2rem;
+  }
+
+  .menuOptionBtn {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  .menuBoxS {
+    gap: 1.5rem;
+  }
+
+  .menuCard {
+    height: 35rem;
+  }
+
+  .menuTitle h3 {
+    font-size: 2rem;
+  }
+
+  .menuTitle h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .menuContainer {
+    gap: 1rem;
+    padding: 3rem;
+  }
+
+  .heading span {
+    font-size: 1.1rem;
+  }
+
+  .menuOptionBtn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .menuBoxS {
+    gap: 1rem;
+  }
+
+  .menuCard {
+    height: 30rem;
+  }
+
+  .menuTitle h3 {
+    font-size: 1.8rem;
+  }
+
+  .menuTitle h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuContainer {
+    gap: 0.8rem;
+    padding: 3rem;
+  }
+
+  .heading span {
+    font-size: 1rem;
+  }
+
+  .menuOptionBtn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .menuBoxS {
+    gap: 0.8rem;
+  }
+
+  .menuCard {
+    height: 25rem;
+  }
+
+  .menuTitle h3 {
+    font-size: 1.6rem;
+  }
+
+  .menuTitle h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuContainer {
+    gap: 0.5rem;
+    padding: 3rem;
+  }
+
+  .heading span {
+    font-size: 0.9rem;
+  }
+
+  .menuOptionBtn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .menuBoxS {
+    gap: 0.5rem;
+  }
+
+  .menuCard {
+    height: 20rem;
+  }
+
+  .menuTitle h3 {
+    font-size: 1.4rem;
+  }
+
+  .menuTitle h4 {
+    font-size: 1rem;
+  }
+
+  .emptyMenu {
+    font-size: 1.2rem;
+  }
+}
+.blurryImage {
+  filter: blur(10px);
+  transition: filter 0.3s ease-in-out;
+}

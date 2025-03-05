@@ -1,0 +1,228 @@
+/* General Styles */
+.about {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.about::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(to top left, #00000088, #00000092),
+    url("../../public/bg-texture.jpg");
+  z-index: -1;
+}
+
+.aboutContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading {
+  margin-bottom: 4.8rem;
+  position: relative;
+  text-align: center;
+}
+
+.aboutBox {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 105rem;
+  gap: 3.8rem;
+  /* flex-wrap: wrap; */
+}
+
+.aboutImg {
+  width: 58rem;
+  height: 50rem;
+}
+
+.aboutImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutText {
+  width: 70rem;
+}
+
+.aboutText h3 {
+  font-size: 1.8rem;
+  color: #ffc900;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.aboutText p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: normal !important;
+  color: #e7e7e7;
+  margin-bottom: 2rem;
+}
+
+.aboutText p span {
+  color: #aaa;
+}
+
+.btnOutline {
+  font-size: 1.1rem;
+  padding: 0.8rem 3rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 5px;
+}
+
+/* Responsive Typography and Layout */
+@media (max-width: 1200px) {
+  .aboutContainer {
+    gap: 2rem;
+  }
+
+  .aboutImg {
+    width: 50rem;
+    height: 45rem;
+  }
+
+  .aboutText {
+    width: 60rem;
+  }
+
+  .aboutText h3 {
+    font-size: 1.7rem;
+  }
+
+  .aboutText p {
+    font-size: 1.3rem;
+  }
+
+  .btnOutline {
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .aboutContainer {
+    gap: 1.5rem;
+  }
+
+  .aboutBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutImg {
+    width: 40rem;
+    height: 35rem;
+    margin-bottom: 2rem;
+  }
+
+  .aboutText {
+    width: 100%;
+  }
+
+  .aboutText h3 {
+    font-size: 1.6rem;
+  }
+
+  .aboutText p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .btnOutline {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    gap: 1rem;
+    padding: 0 3rem;
+  }
+
+  .aboutBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutImg {
+    width: 30rem;
+    height: 30rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutText {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .aboutText h3 {
+    font-size: 1.4rem;
+  }
+
+  .aboutText p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .btnOutline {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutContainer {
+    gap: 0.8rem;
+  }
+
+  .aboutBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutImg {
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 1rem;
+  }
+
+  .aboutText {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .aboutText h3 {
+    font-size: 1.3rem;
+  }
+
+  .aboutText p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btnOutline {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

@@ -1,0 +1,135 @@
+/* Homepage Background */
+.homepage {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("/public/hero-bg.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+/* Video Box */
+.heroVideoBox {
+  width: 35rem;
+  height: 45rem;
+  border-top-right-radius: 12rem;
+  border-bottom-left-radius: 12rem;
+  overflow: hidden;
+}
+
+/* Video */
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Section */
+.heroText {
+  width: 600px;
+  max-width: 90%;
+  /* text-align: center; */
+}
+
+/* Primary Heading */
+.headingPrimary {
+  font-size: 9rem;
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* Paragraph */
+.paragraph {
+  color: #ffc900;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  line-height: 1.3;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Button */
+.btnOutline {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  padding: 1rem 3.5rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.btnOutline a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.8rem;
+}
+
+.btnOutline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Icon */
+.btnOutline i {
+  font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btnOutline:hover i {
+  transform: translateY(3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .homepage {
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    height: auto;
+    padding: 4rem 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .heroVideoBox {
+    width: 90%;
+    height: 50vh;
+  }
+
+  .headingPrimary {
+    font-size: 6rem;
+  }
+
+  .paragraph {
+    font-size: 1.5rem;
+    max-width: 100%;
+  }
+
+  .btnOutline {
+    font-size: 1.4rem;
+    padding: 0.8rem 2.5rem;
+    bottom: -2rem;
+  }
+}
