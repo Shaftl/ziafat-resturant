@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
@@ -25,7 +26,13 @@ export default function HomePage() {
 
   return (
     <div className={styles.homepage} id="home">
-      <div className={styles.heroVideoBox} ref={videoRef}>
+      <motion.div
+        className={styles.heroVideoBox}
+        ref={videoRef}
+        initial={{ opacity: 0, scale: 1, translateY: "-600px" }}
+        animate={{ opacity: 1, scale: 1, translateY: 0 }}
+        transition={{ duration: 4 }}
+      >
         {isVisible ? ( // Load video only when visible
           <video className={styles.heroVideo} loop autoPlay playsInline muted>
             <source src="./ziafat-hero.mp4" type="video/mp4" />
@@ -35,9 +42,14 @@ export default function HomePage() {
           // <img src="./lazy-video-img.png" alt="" className={styles.heroVideo} />
         )}
         {/* <img src="./lazy-vdeo-img.png" alt="" className={styles.heroVideo} /> */}
-      </div>
+      </motion.div>
 
-      <div className={styles.heroText}>
+      <motion.div
+        className={styles.heroText}
+        initial={{ opacity: 0, scale: 1, translateY: "600px" }}
+        animate={{ opacity: 1, scale: 1, translateY: 0 }}
+        transition={{ duration: 3.5, delay: 0.5 }}
+      >
         <h1 className={styles.headingPrimary}>
           A ROYAL FEAST
           <br />
@@ -47,14 +59,24 @@ export default function HomePage() {
           Our restaurant blends rich culinary traditions with modern elegance,
           offering an unforgettable dining experience.
         </p>
-      </div>
+      </motion.div>
 
-      <button className={styles.btnOutline}>
+      <motion.button
+        className={styles.btnOutline}
+        initial={{
+          opacity: 0,
+          scale: 1,
+          translateY: "300px",
+          translateX: "-50%",
+        }}
+        animate={{ opacity: 1, scale: 1, translateY: 0, translateX: "-50%" }}
+        transition={{ duration: 3.5, delay: 0.5 }}
+      >
         <a href="#menu">
           See more{" "}
           <i className="bx bxs-chevron-down" style={{ color: "#ffffff" }}></i>
         </a>
-      </button>
+      </motion.button>
     </div>
   );
 }

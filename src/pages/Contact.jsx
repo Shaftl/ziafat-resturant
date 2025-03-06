@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 
 function Contact() {
   return (
-    <div id="contact" className={styles.contact}>
+    <div id="contact" className={`${styles.contact} block`}>
       <div className={styles.contactContainer}>
         <div className={`${styles.heading} heading`}>
           <h2>Contact</h2>

@@ -32,9 +32,15 @@ function Header({ setIsMenuNav }) {
       />
 
       <div className={styles.socialLinks}>
-        <i className={`${styles.socialLink} bx bxl-facebook-circle`}></i>
-        <i className={`${styles.socialLink} bx bxl-instagram-alt`}></i>
-        <i className={`${styles.socialLink} bx bxl-tiktok`}></i>
+        <a href="https://www.facebook.com/ZiyafatRestaurantKBL">
+          <i className={`${styles.socialLink} bx bxl-facebook-circle`}></i>
+        </a>
+        <a href="https://www.instagram.com/ziyafat_restaurant_kbl/">
+          <i className={`${styles.socialLink} bx bxl-instagram-alt`}></i>
+        </a>
+        <a href="https://www.tiktok.com/@ziyafatrestaurant">
+          <i className={`${styles.socialLink} bx bxl-tiktok`}></i>
+        </a>
       </div>
     </div>
   );

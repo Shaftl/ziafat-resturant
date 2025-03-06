@@ -36,7 +36,7 @@ function About() {
   }, []);
 
   return (
-    <div className={styles.about} id="about">
+    <div className={`${styles.about} block`} id="about">
       <div className={styles.aboutContainer}>
         <div className={`${styles.heading} heading`}>
           <h2>About</h2>
@@ -66,7 +66,9 @@ function About() {
                 warmth, flavor, and excellence
               </span>
             </p>
-            <button className={styles.btnOutline}>Contact us</button>
+            <a href="#contact">
+              <button className={styles.btnOutline}>Contact us</button>
+            </a>
           </div>
         </div>
       </div>

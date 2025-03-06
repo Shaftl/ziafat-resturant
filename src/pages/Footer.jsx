@@ -2,13 +2,19 @@ import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} block`}>
       <div className={styles.container}>
         {/* Social Media Icons */}
         <div className={styles.socialIcons}>
-          <i className="bx bxl-facebook"></i>
-          <i className="bx bxl-instagram"></i>
-          <i className="bx bxl-vk"></i>
+          <a href="https://www.facebook.com/ZiyafatRestaurantKBL/photos">
+            <i className="bx bxl-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/ziyafat_restaurant_kbl/">
+            <i className="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@ziyafatrestaurant">
+            <i className="bx bxl-vk"></i>
+          </a>
         </div>
 
         {/* Horizontal Line */}
@@ -16,8 +22,8 @@ function Footer() {
 
         {/* Navigation Links */}
         <nav className={styles.nav}>
-          <a href="#">Home</a>
-          <a href="#">Menu</a>
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
 
           <div className={styles.logo}>
             <img
@@ -30,8 +36,8 @@ function Footer() {
               }}
             />
           </div>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         {/* Logo */}

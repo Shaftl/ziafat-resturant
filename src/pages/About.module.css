@@ -78,8 +78,8 @@
 }
 
 .btnOutline {
-  font-size: 1.1rem;
-  padding: 0.8rem 3rem;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
@@ -88,6 +88,16 @@
   align-items: center;
   font-weight: 500;
   gap: 5px;
+  transition: all 0.3s;
+}
+
+.btnOutline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Responsive Typography and Layout */

@@ -28,6 +28,14 @@
   gap: 0.5rem;
 }
 
+.socialLinks a {
+  color: #fff !important;
+}
+
+.socialLink i {
+  color: #fff !important;
+}
+
 .socialLink {
   font-size: 2rem;
   cursor: pointer;
