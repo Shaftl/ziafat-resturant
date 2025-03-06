@@ -1,8 +1,14 @@
 import styles from "./Footer.module.css";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <footer className={`${styles.footer} block`}>
+    <motion.footer
+      className={`${styles.footer} block`}
+      initial={{ opacity: 0, scale: 1, translateY: "80px" }}
+      whileInView={{ opacity: 1, scale: 1, translateY: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={styles.container}>
         {/* Social Media Icons */}
         <div className={styles.socialIcons}>
@@ -42,7 +48,7 @@ function Footer() {
 
         {/* Logo */}
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 

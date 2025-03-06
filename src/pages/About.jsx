@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./About.module.css";
+import { motion } from "framer-motion";
 
 function About() {
   useEffect(() => {
@@ -33,43 +34,62 @@ function About() {
 
     // Observe each element
     elements.forEach((el) => observer.observe(el));
+
+    // Clean up observer on component unmount
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className={`${styles.about} block`} id="about">
       <div className={styles.aboutContainer}>
-        <div className={`${styles.heading} heading`}>
+        <motion.div
+          className={`${styles.heading} heading`}
+          initial={{ opacity: 0, scale: 1, translateY: "80px" }}
+          whileInView={{ opacity: 1, scale: 1, translateY: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2>About</h2>
-        </div>
+        </motion.div>
 
         <div className={styles.aboutBox}>
-          <div className={styles.aboutImg}>
+          <motion.div
+            className={styles.aboutImg}
+            initial={{ opacity: 0, scale: 1, translateX: "-80px" }}
+            whileInView={{ opacity: 1, scale: 1, translateX: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <img src="./about.jpg" alt="About Restaurant" />
-          </div>
-          <div className={styles.aboutText}>
+          </motion.div>
+          <motion.div
+            className={styles.aboutText}
+            initial={{ opacity: 0, scale: 1, translateX: "80px" }}
+            whileInView={{ opacity: 1, scale: 1, translateX: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3>A Royal Dining Experience</h3>
 
             <p>
               At Ziyafat Restaurant, we bring you a blend of rich tradition and
               modern elegance, offering an extraordinary dining experience fit
               for royalty.
-              <br /> <br /> Our carefully curated menu features authentic
-              flavors, crafted with the finest ingredients by expert chefs. Step
-              into a world of grandeur, where every detail—from our opulent
-              décor to our impeccable hospitality—creates a luxurious and
-              welcoming atmosphere.
+              <br /> <br />
+              Our carefully curated menu features authentic flavors, crafted
+              with the finest ingredients by expert chefs. Step into a world of
+              grandeur, where every detail—from our opulent décor to our
+              impeccable hospitality—creates a luxurious and welcoming
+              atmosphere.
               <br />
               <br />
               <span>
                 Whether it's a family gathering, a business dinner, or a special
                 celebration, Ziyafat promises an unforgettable feast filled with
-                warmth, flavor, and excellence
+                warmth, flavor, and excellence.
               </span>
             </p>
             <a href="#contact">
               <button className={styles.btnOutline}>Contact us</button>
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

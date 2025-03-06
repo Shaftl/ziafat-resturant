@@ -67,9 +67,9 @@ export default function App() {
         }}
       >
         {isMuted ? (
-          <i class="bx bx-volume-mute"></i>
+          <i className="bx bx-volume-mute"></i>
         ) : (
-          <i class="bx bx-volume-full"></i>
+          <i className="bx bx-volume-full"></i>
         )}
       </button>
 

@@ -29,9 +29,9 @@ export default function HomePage() {
       <motion.div
         className={styles.heroVideoBox}
         ref={videoRef}
-        initial={{ opacity: 0, scale: 1, translateY: "-600px" }}
+        initial={{ opacity: 0, scale: 1, translateY: "-500px" }}
         animate={{ opacity: 1, scale: 1, translateY: 0 }}
-        transition={{ duration: 4 }}
+        transition={{ duration: 4, delay: 0.3 }} /* Added a delay here */
       >
         {isVisible ? ( // Load video only when visible
           <video className={styles.heroVideo} loop autoPlay playsInline muted>
@@ -39,16 +39,14 @@ export default function HomePage() {
           </video>
         ) : (
           <img src="./lazy-vdeo-img.png" alt="" className={styles.heroVideo} />
-          // <img src="./lazy-video-img.png" alt="" className={styles.heroVideo} />
         )}
-        {/* <img src="./lazy-vdeo-img.png" alt="" className={styles.heroVideo} /> */}
       </motion.div>
 
       <motion.div
         className={styles.heroText}
         initial={{ opacity: 0, scale: 1, translateY: "600px" }}
         animate={{ opacity: 1, scale: 1, translateY: 0 }}
-        transition={{ duration: 3.5, delay: 0.5 }}
+        transition={{ duration: 3.5, delay: 0.5 }} /* Delay already set here */
       >
         <h1 className={styles.headingPrimary}>
           A ROYAL FEAST
@@ -70,7 +68,7 @@ export default function HomePage() {
           translateX: "-50%",
         }}
         animate={{ opacity: 1, scale: 1, translateY: 0, translateX: "-50%" }}
-        transition={{ duration: 3.5, delay: 0.5 }}
+        transition={{ duration: 3.5, delay: 0.5 }} /* Delay already set here */
       >
         <a href="#menu">
           See more{" "}

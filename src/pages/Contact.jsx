@@ -1,4 +1,5 @@
 import styles from "./Contact.module.css";
+import { motion } from "framer-motion";
 
 function Contact() {
   return (
@@ -10,12 +11,22 @@ function Contact() {
 
         <div className={styles.content}>
           {/* Floor Plan Image */}
-          <div className={styles.floorPlan}>
+          <motion.div
+            className={styles.floorPlan}
+            initial={{ opacity: 0, scale: 1, translateX: "80px" }}
+            whileInView={{ opacity: 1, scale: 1, translateX: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <img src="./contact.png" alt="Floor Plan" />
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div className={styles.contactForm}>
+          <motion.div
+            className={styles.contactForm}
+            initial={{ opacity: 0, scale: 1, translateX: "-80px" }}
+            whileInView={{ opacity: 1, scale: 1, translateX: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <form>
               <div className={styles.contactInfo}>
                 <div className={styles.infoItem}>
@@ -27,7 +38,7 @@ function Contact() {
                 <div className={styles.infoItem}>
                   <i className="bx bx-map"></i>
                   <div>
-                    <p>City Mall , Kabul, Afghanistan</p>
+                    <p>City Mall, Kabul, Afghanistan</p>
                   </div>
                 </div>
                 <div className={styles.infoItem}>
@@ -41,16 +52,15 @@ function Contact() {
                 <i className="bx bx-calendar"></i>
                 <input type="time" required />
               </div>
+
               <input type="text" placeholder="Enter Your Name" required />
               <input type="email" placeholder="Enter Your Email" required />
               <input type="tel" placeholder="Enter Your Number" required />
 
               <button>Contact</button>
             </form>
-          </div>
+          </motion.div>
         </div>
-
-        {/* Contact Info Section */}
       </div>
     </div>
   );
