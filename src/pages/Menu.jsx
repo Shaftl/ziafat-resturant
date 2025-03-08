@@ -234,6 +234,7 @@ function Menu() {
                       src={`https://my-node-api-2.onrender.com/${list.img.slice(
                         4
                       )}`}
+                      onerror="this.onerror=null; this.src='./lazy-vdeo-img';"
                       alt={list.foodName}
                     />
                     <div className={styles.layer}>
