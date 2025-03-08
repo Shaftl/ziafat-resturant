@@ -229,15 +229,25 @@ function Menu() {
             >
               {itemListActive.length > 0 ? (
                 itemListActive.map((list) => (
-                  <div key={list.foodName} className={styles.menuCard}>
+                  <div
+                    key={list.foodName}
+                    className={styles.menuCard}
+                    style={{ position: "relative" }}
+                  >
+                    <img
+                      src="./lazy-vdeo-img.png"
+                      style={{ position: "absolute", zIndex: "1" }}
+                    />
+
                     <img
                       src={`https://my-node-api-2.onrender.com/${list.img.slice(
                         4
                       )}`}
-                      onerror="this.onerror=null; this.src='./lazy-vdeo-img';"
+                      onerror="this.onerror=null; this.src='./lazy-vdeo-img.png';"
                       alt={list.foodName}
+                      style={{ zIndex: "2", position: "relative" }}
                     />
-                    <div className={styles.layer}>
+                    <div className={styles.layer} style={{ zIndex: "3" }}>
                       <h3>{list.foodName}</h3>
                       <p>{list.description}</p>
                       <h4>{list.price}</h4>
