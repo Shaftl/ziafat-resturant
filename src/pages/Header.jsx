@@ -17,7 +17,10 @@ function Header({ setIsMenuNav }) {
   }, sticky);
 
   return (
-    <div className={`${styles.header} ${sticky ? styles.active : ""}`}>
+    <div
+      className={`${styles.header} ${sticky ? styles.active : ""}`}
+      style={{ zIndex: "100" }}
+    >
       <Navigation setIsMenuNav={setIsMenuNav} />
 
       <img
