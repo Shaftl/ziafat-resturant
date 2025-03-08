@@ -3,40 +3,18 @@ import { motion } from "framer-motion";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
-  const videoRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Stop observing once video loads
-        }
-      },
-      { threshold: 0.5 } // Trigger when 50% of video is in viewport
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <div className={styles.homepage} id="home">
       <motion.div
         className={styles.heroVideoBox}
-        ref={videoRef}
         initial={{ opacity: 0, scale: 1, translateY: "-500px" }}
         animate={{ opacity: 1, scale: 1, translateY: 0 }}
         transition={{ duration: 4, delay: 0.3 }} /* Added a delay here */
       >
         {isVisible ? ( // Load video only when visible
-          <video className={styles.heroVideo} loop autoPlay playsInline muted>
-            <source src="./ziafat-hero.mp4" type="video/mp4" />
-          </video>
+          <img src="./hero 1.jpg  " alt="" className={styles.heroVideo} />
         ) : (
           <img src="./lazy-vdeo-img.png" alt="" className={styles.heroVideo} />
         )}
